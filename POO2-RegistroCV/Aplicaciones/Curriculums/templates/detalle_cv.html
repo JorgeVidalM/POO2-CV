@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Detalle del CV{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Detalle del CV</h2>
+
+    <p><strong>Nombre:</strong> {{ cv.nombres }}</p>
+    <p><strong>Apellido:</strong> {{ cv.apellidos }}</p>
+    <p><strong>Fecha de nacimiento:</strong> {{ cv.fecha_nacimiento }}</p>
+    <p><strong>Edad:</strong> {{ cv.edad }} años</p>
+    <p><strong>Ciudad:</strong> {{ cv.ciudad.nombre }}</p>
+    <p><strong>Descripción:</strong><br>{{ cv.descripcion }}</p>
+
+    {% if cv.foto %}
+    <p><strong>Foto:</strong></p>
+    <img src="{{ cv.foto.url }}" width="250" style="border-radius: 8px; object-fit: cover;">
+    {% else %}
+    <p><em>Sin foto disponible.</em></p>
+    {% endif %}
+
+    <a href="{% url 'listar_cvs' %}" class="btn btn-secondary mt-3">⬅ Volver al listado</a>
+</div>
+{% endblock %}

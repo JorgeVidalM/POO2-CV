@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container mt-4">
+    <h2>Menú Principal</h2>
+
+    <div class="mt-3">
+        <h5>Bienvenidos al Sistema de Registro de Currículums</h5>
+        <p>
+            Esta plataforma permite ingresar, visualizar y gestionar currículums de manera eficiente. 
+            Aquí podrás registrar nuevos CVs, ver el listado con filtros y consultar el detalle de cada postulante.
+        </p>
+    </div>
+
+    <div class="list-group mt-4">
+        <a href="{% url 'ingresar_cv' %}" class="list-group-item list-group-item-action">📝 Ingresar nuevo CV</a>
+        <a href="{% url 'listar_cvs' %}" class="list-group-item list-group-item-action">📋 Listar CVs</a>
+    </div>
+</div>
+
+{% endblock %}

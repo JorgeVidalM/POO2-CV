@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Ingresar Curriculum{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Ingreso de Curriculum Vitae</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="form-group mb-3">
+            <label for="id_nombres">Nombres:</label>
+            {{ form.nombres }}
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="id_apellidos">Apellidos:</label>
+            {{ form.apellidos }}
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="id_fecha_nacimiento">Fecha de Nacimiento:</label>
+            {{ form.fecha_nacimiento }}
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="id_ciudad">Ciudad:</label>
+            {{ form.ciudad }}
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="id_descripcion">Descripción:</label>
+            {{ form.descripcion }}
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="id_foto">Foto:</label>
+            {{ form.foto }}
+        </div>
+
+        <button type="submit" class="btn btn-success">Guardar CV</button>
+    </form>
+</div>
+{% endblock %}
